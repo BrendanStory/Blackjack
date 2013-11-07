@@ -3,13 +3,16 @@ class Card {
 	private Boolean faceDown;
 	private String suit;
 
-	public card(int cardValue, String suit){
+	public Card(int cardValue, String suit){
 		setValue(cardValue);
 		setSuit(suit);
+		
+
 	}
 
 	public int cardValue(){
 		return cardValue;
+		
 	}
 	public void setValue(int cardValue){
 		this.cardValue = cardValue;
