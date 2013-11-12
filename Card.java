@@ -1,10 +1,10 @@
 class Card {
 	private int cardValue;
-	private Boolean faceDown;
+	private Boolean faceUp;
 	private String suit;
 
 	public Card(int cardValue, String suit){
-		setValue(cardValue);
+		setCardValue(cardValue);
 		setSuit(suit);
 		
 
@@ -14,7 +14,7 @@ class Card {
 		return cardValue;
 		
 	}
-	public void setValue(int cardValue){
+	public void setCardValue(int cardValue){
 		this.cardValue = cardValue;
 	}
 
