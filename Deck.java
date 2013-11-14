@@ -1,8 +1,6 @@
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Rectangle;
-import java.applet.*;
-
 
 import java.io.File;
 import java.io.IOException;
@@ -11,7 +9,7 @@ import javax.imageio.ImageIO;
 
 import java.util.Random;
 
-class Deck extends Applet{
+public class Deck {
 
 	private int counter;
 	private MoviePoster poster;
@@ -31,23 +29,23 @@ class Deck extends Applet{
 			for (int j = 0; j < valueArray.length; j++ ) {
 				Card card = new Card(valueArray[j], suitArray[i]);
 
-				if (j == 1) {
-					System.out.println("A" + suitArray[i]);
+				if (j == 0) {
+					cardName = "A" + suitArray[i];
 				} else if (j == 10) {
-					System.out.println("J" + suitArray[i]);
+					cardName = "J" + suitArray[i];
 				} else if (j == 11) {
-					System.out.println("Q" + suitArray[i]);
+					cardName = "Q" + suitArray[i];
 				} else if (j == 12) {
-					System.out.println("K" + suitArray[i]);
+					cardName = "K" + suitArray[i];
 				} else {
-					System.out.println(valueArray[j] + suitArray[i]);
+					cardName = valueArray[j] + suitArray[i];
 				}
 
 				poster = new MoviePoster(cardName);
 
 				if (x > 1000) {
 					x = 0;
-					y =+ 125;
+					y += 125;
 				}
 
 				Rectangle a = new Rectangle(x,y,100,150);
