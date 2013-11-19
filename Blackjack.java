@@ -18,5 +18,8 @@ public class Blackjack extends Applet{
 
 	public void paint(Graphics g) {
 		Deck deck = new Deck(g);
+		deck.print(g);
+		deck.shuffle();
+		deck.print(g);
 	}
 }

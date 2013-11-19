@@ -22,8 +22,12 @@ public class Deck {
 	private Card[] deck = new Card[51];
 	private int count;
 
+	private Random random = new Random();
+
+	String cardName = "";
+
 	public Deck(Graphics g){
-		String cardName = "";
+		
 
 		for (int i = 0; i < suitArray.length; i++ ) {
 			for (int j = 0; j < valueArray.length; j++ ) {
@@ -41,19 +45,42 @@ public class Deck {
 					cardName = valueArray[j] + suitArray[i];
 				}
 
-				poster = new MoviePoster(cardName);
-
-				if (x > 1000) {
-					x = 0;
-					y += 125;
-				}
-
-				Rectangle a = new Rectangle(x,y,100,150);
-				                                               
-				poster.draw(g,a);
-
-				x += 100;
 			}
+		}
+	}
+
+	public void shuffle() {
+		int randomCard = 0;
+		Card temp = new Card(2,"Hearts");	
+
+		for (int i = 0; i < deck.length; i++) {
+			randomCard = random.nextInt(52);
+			temp = deck[i];
+			deck[i] = deck[randomCard];
+			deck[randomCard] = temp;
+		}
+	}
+
+
+
+	public void print(Graphics g) {
+	
+		poster = new MoviePoster(cardName);
+
+		for (int i =0; i <deck.length; i++) {
+		
+	
+
+			if (x > 1000) {
+				x = 0;
+				y += 125;
+			}
+
+			Rectangle a = new Rectangle(x,y,100,150);
+	                                               
+			poster.draw(g,a);
+
+			x += 100;
 		}
 	}
 }
