@@ -1,7 +1,6 @@
 class Card {
-	private int cardValue;
-	private Boolean faceUp;
-	private String suit;
+	public int cardValue;
+	public  String suit;
 
 	public Card(int cardValue, String suit){
 		setCardValue(cardValue);
